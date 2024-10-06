@@ -177,6 +177,7 @@ const processResponse = (proxyRes, res, append) => {
 
 const onProxyReq = (proxyReq, req, res, options) => {
   proxyReq.removeHeader('User-Agent');
+  proxyReq.removeHeader('clientUa');
   if (REWRITE_ACCEPT_ENCODING) {
     proxyReq.setHeader('Accept-Encoding', 'gzip');
   }
